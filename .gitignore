@@ -1,0 +1,26 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# Python eggs
+*.egg
+*.egg-info/
+dist/
+build/
+*.egg-info
+
+# virtual environments
+oodNuclei/
+
+# Environment / configuration files
+.idea/
+.vscode/
+*.env
+
+# Saved weoghts
+weights/
+
+# Experiment Outputs
+outputs/

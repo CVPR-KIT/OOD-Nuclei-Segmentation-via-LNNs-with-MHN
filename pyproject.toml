@@ -1,0 +1,13 @@
+[project]
+name = "OOD-Nuclei-Segmentation"
+version = "1.1.0"
+description = "OOD-Nuclei-Segmentation-via-LNNs-with-MHN Project Code"
+authors = [{name = "Bishal Swain", email = "blue.bishal@rocketmail.com"}]
+dynamic = ["dependencies"]
+
+[build-system]
+requires = ["setuptools>=42", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]

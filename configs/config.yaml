@@ -1,0 +1,51 @@
+# configs/config.yaml
+
+# Hydra configs
+hydra:
+  job_logging:
+    version: 1
+    disable_existing_loggers: false
+    formatters:
+      simple:
+        format: "%(asctime)s [%(levelname)s] %(name)s: %(message)s"
+    handlers:
+      file:
+        class: logging.FileHandler
+        level: INFO
+        formatter: simple
+        filename: ${hydra.runtime.output_dir}/${hydra.job.name}.log
+    root:
+      level: INFO
+      handlers: [file]
+
+# ---------------------------------------------------------------------------------------------------
+# Main configs
+dataset:
+  name: "cryonuseg"
+  path: "/mnt/vol3/Datasets/CryoNuSeg/instanceSeg/"
+  saved_images: true
+
+model:
+  name: "unet3p"
+  pretrained: false
+  kernel_size: 3
+  base_filters: 32
+  activation: "relu"  # relu, GLU
+  dropout: 0.3
+  segmentation_type: "instance" # semantic, instance
+  use_lnn: true
+  use_hopfield: true
+  use_quantizer: false 
+  use_fusion: true
+
+
+training:
+  epochs: 30
+  batch_size: 8
+  learning_rate: 0.001
+
+other:
+  log_print: true
+  wandb: false
+  #wandb: "liquid_nuclei"
+  debug: false
